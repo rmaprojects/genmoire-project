@@ -1,0 +1,62 @@
+[
+  {
+    "id": "chronicles-of-aethelgard",
+    "title": "Chronicles of Aethelgard: The Obsidian Grimoire",
+    "author": "Archivist Valen & Lady Elenor",
+    "coverUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+    "synopsis": "Di puncak menara Obsidian Citadel, seorang cendekiawan muda menemukan sebuah naskah kuno yang berbisik dalam bahasa terlarang. Perjalanan melintasi gurun badai es dan reruntuhan arkana dimulai.",
+    "genres": ["Dark Fantasy", "Arcane Mystery", "Visual Novel"],
+    "isbn": "978-602-03-8591-2",
+    "estimatedReadMinutes": 25,
+    "isUnlocked": true,
+    "isCustomAuthorMode": false,
+    "progressPercent": 40,
+    "currentChapterId": "ch-1",
+    "lastReadDate": "2026-08-12"
+  },
+  {
+    "id": "the-alchemist",
+    "title": "The Alchemist (Sang Alkemis)",
+    "author": "Paulo Coelho",
+    "coverUrl": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
+    "synopsis": "Kisah Santiago, gembala muda asal Andalusia yang berkelana melintasi padang pasir Mesir demi menemukan harta karun di Piramida dan memahami Bahasa Semesta.",
+    "genres": ["Philosophical", "Adventure", "Classics"],
+    "isbn": "978-0-06-231500-7",
+    "estimatedReadMinutes": 45,
+    "isUnlocked": true,
+    "isCustomAuthorMode": true,
+    "progressPercent": 85,
+    "currentChapterId": "ch-2",
+    "lastReadDate": "2026-08-11"
+  },
+  {
+    "id": "atomic-habits",
+    "title": "Atomic Habits: Kinetic Grimoire",
+    "author": "James Clear",
+    "coverUrl": "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=800&q=80",
+    "synopsis": "Perubahan kecil luar biasa yang dianimasikan dalam visualisasi sistem kinetic. Memahami loop kebiasaan, cue, craving, response, dan reward secara visual dan mendalam.",
+    "genres": ["Self Improvement", "Cognitive Science"],
+    "isbn": "978-0-7352-1129-2",
+    "estimatedReadMinutes": 35,
+    "isUnlocked": false,
+    "isCustomAuthorMode": false,
+    "progressPercent": 0,
+    "currentChapterId": "ch-1",
+    "lastReadDate": null
+  },
+  {
+    "id": "fate-stay-night-prelude",
+    "title": "The Awakening of Fuyuki: Holy Grail Prelude",
+    "author": "Kinoko Nasu (Tribute Edition)",
+    "coverUrl": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+    "synopsis": "Malam ketika langit Fuyuki terbelah oleh kilatan mantra Servant. Pengalaman membaca novel kinetik dengan visual atmospheric Fate-style dan scoring ambient magis.",
+    "genres": ["Urban Fantasy", "Action", "Visual Novel"],
+    "isbn": "978-4-04-100234-5",
+    "estimatedReadMinutes": 20,
+    "isUnlocked": true,
+    "isCustomAuthorMode": false,
+    "progressPercent": 100,
+    "currentChapterId": "ch-2",
+    "lastReadDate": "2026-08-09"
+  }
+]

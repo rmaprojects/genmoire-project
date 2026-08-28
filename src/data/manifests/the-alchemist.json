@@ -1,0 +1,159 @@
+{
+  "manifestId": "manifest-alchemist-v1",
+  "bookId": "the-alchemist",
+  "title": "The Alchemist (Sang Alkemis)",
+  "author": "Paulo Coelho",
+  "coverUrl": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1200&q=80",
+  "synopsis": "Kisah Santiago, gembala muda Andalusia yang melakukan perjalanan melintasi padang pasir demi mewujudkan Legenda Pribadinya.",
+  "genre": ["Philosophical", "Adventure", "Classics"],
+  "tags": ["Bestseller", "Kinetic Mode", "Audio BGM", "Author Curated"],
+  "isbn": "978-0-06-231500-7",
+  "epubHash": "a1b2c3d4e5f67890abcdef1234567890",
+  "estimatedReadTimeMinutes": 45,
+  "totalChapters": 2,
+  "authorControl": {
+    "hasCustomAssets": true,
+    "allowsAiVisuals": true,
+    "supportsPureKineticMode": true
+  },
+  "pageChallenge": {
+    "question": "Buka halaman 18 buku fisikmu, apa kata kedua di paragraf ketiga?",
+    "pageNumber": 18,
+    "lineNumber": 3,
+    "expectedWord": "maktub",
+    "hint": "Kata bahasa Arab yang berarti 'sudah tertulis'."
+  },
+  "cgs": {
+    "cg-andalusia-fields": {
+      "id": "cg-andalusia-fields",
+      "url": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80",
+      "alt": "Padang rumput Andalusia saat matahari terbenam dengan kawanan domba beristirahat di bawah pohon sycamore",
+      "prompt": "Cinematic visual novel background of rolling hills in Andalusia Spain at sunset, silhouette of grazing sheep under an old sycamore tree",
+      "isAiGenerated": false
+    },
+    "cg-desert-caravan": {
+      "id": "cg-desert-caravan",
+      "url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1920&q=80",
+      "alt": "Kafilah melintasi bukit pasir Sahara di bawah terik matahari keemasan",
+      "prompt": "Caravan of camels crossing endless Sahara desert sand dunes, golden hour lighting, atmospheric heat waves",
+      "isAiGenerated": false
+    },
+    "cg-pyramids-night": {
+      "id": "cg-pyramids-night",
+      "url": "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=1920&q=80",
+      "alt": "Piramida Giza megah di bawah langit malam bertabur jutaan bintang",
+      "prompt": "Majestic Great Pyramids of Giza under clear night sky glowing with Milky Way galaxy stars, moonlit sands",
+      "isAiGenerated": false
+    }
+  },
+  "bgms": {
+    "bgm-pastoral-serenade": {
+      "id": "bgm-pastoral-serenade",
+      "title": "Andalusian Sunset (Acoustic Guitar)",
+      "url": "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8bbf79344.mp3",
+      "loop": true,
+      "volume": 0.5
+    },
+    "bgm-desert-mystic": {
+      "id": "bgm-desert-mystic",
+      "title": "Winds of the Sahara (Oud & Ambient)",
+      "url": "https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3",
+      "loop": true,
+      "volume": 0.6
+    }
+  },
+  "explains": {
+    "Personal Legend": {
+      "term": "Personal Legend",
+      "contextType": "plot",
+      "shortDefinition": "Tujuan hidup sejati atau takdir yang diinginkan seseorang sejak masa muda.",
+      "inContextExplanation": "Dalam filosofi Sang Alkemis, Legenda Pribadi adalah satu-satunya kewajiban sejati manusia di muka bumi. Ketika kamu menginginkan sesuatu dengan segenap hatimu, seluruh alam semesta akan bersatu membantumu mencapainya.",
+      "authorNote": "Konsep inti eksistensialisme yang diringkas Paulo Coelho dalam novel ini."
+    },
+    "Maktub": {
+      "term": "Maktub",
+      "contextType": "idiom",
+      "shortDefinition": "Tercatat / Sudah tertulis oleh Takdir Ilahi (bahasa Arab: مكتوب).",
+      "inContextExplanation": "Kata yang diucapkan oleh saudagar kristal dan Sang Alkemis untuk menegaskan bahwa peristiwa kehidupan merupakan bagian dari rencana agung Yang Maha Kuasa yang tak perlu dicemaskan secara berlebih.",
+      "authorNote": "Menjadi jangkar ketenangan batin bagi Santiago saat menghadapi ketidakpastian gurun."
+    },
+    "Soul of the World": {
+      "term": "Soul of the World",
+      "contextType": "syntax",
+      "shortDefinition": "Jiwa Semesta; kekuatan spiritual yang menghubungkan seluruh ciptaan di alam raya.",
+      "inContextExplanation": "Prinsip bahwa semua unsur di bumi—pasir, angin, elang, bahkan manusia—berbicara dalam satu bahasa hening yang sama yang dapat dipahami melalui intuisi dan pertanda.",
+      "authorNote": "Merupakan metafora panteisme mistik tradisi alkimia kuno."
+    }
+  },
+  "chapters": [
+    {
+      "id": "ch-1",
+      "title": "Bab I: Mimpi di Bawah Pohon Sycamore",
+      "order": 1,
+      "nodeIds": ["node-a1", "node-a2", "node-a3"]
+    },
+    {
+      "id": "ch-2",
+      "title": "Bab II: Menyusuri Pasir Gurun Sahara",
+      "order": 2,
+      "nodeIds": ["node-a4", "node-a5", "node-a6"]
+    }
+  ],
+  "nodes": {
+    "node-a1": {
+      "id": "node-a1",
+      "text": "Nama pemuda itu adalah Santiago. Hari menjelang senja ketika ia sampai bersama kawanan dombanya di dekat sebuah gereja tua yang ditinggalkan di padang rumput Andalusia.",
+      "speaker": "Narator",
+      "cgId": "cg-andalusia-fields",
+      "bgmId": "bgm-pastoral-serenade",
+      "transition": "crossfade",
+      "highlightedTerms": []
+    },
+    "node-a2": {
+      "id": "node-a2",
+      "text": "\"Setiap orang di muka bumi memiliki Personal Legend yang harus mereka kejar,\" teringat ia akan perkataan orang tua misterius yang ia jumpai di alun-alun Tarifa.",
+      "speaker": "Santiago",
+      "speakerTitle": "The Shepherd Boy",
+      "cgId": "cg-andalusia-fields",
+      "bgmId": "bgm-pastoral-serenade",
+      "transition": "instant",
+      "highlightedTerms": ["Personal Legend"]
+    },
+    "node-a3": {
+      "id": "node-a3",
+      "text": "Santiago memandangi langit senja yang memerah. Domba-dombanya telah mengajarinya banyak hal, namun hatinya mendambakan samudra dan padang pasir yang belum pernah ia lihat.",
+      "speaker": "Narator",
+      "cgId": "cg-andalusia-fields",
+      "bgmId": "bgm-pastoral-serenade",
+      "transition": "crossfade",
+      "highlightedTerms": []
+    },
+    "node-a4": {
+      "id": "node-a4",
+      "text": "Bulan-bulan berlalu. Santiago kini berada di tengah kafilah besar yang membelah keheningan gurun Sahara. Angin gurun berbisik menyampaikan pesan dari Soul of the World.",
+      "speaker": "Narator",
+      "cgId": "cg-desert-caravan",
+      "bgmId": "bgm-desert-mystic",
+      "transition": "crossfade",
+      "highlightedTerms": ["Soul of the World"]
+    },
+    "node-a5": {
+      "id": "node-a5",
+      "text": "\"Maktub,\" gumam sang penunggang unta di sampingnya dengan tenang saat badai pasir mulai terlihat di kejauhan. \"Segala sesuatu yang terjadi telah tertulis oleh tangan yang sama.\"",
+      "speaker": "Penunggang Unta",
+      "cgId": "cg-desert-caravan",
+      "bgmId": "bgm-desert-mystic",
+      "transition": "instant",
+      "highlightedTerms": ["Maktub"]
+    },
+    "node-a6": {
+      "id": "node-a6",
+      "text": "Dan pada malam ketika bulan purnama bersinar terang di atas Piramida, Santiago meneteskan air mata syukur. Ia menyadari bahwa harta karun sejati bukanlah emas, melainkan setiap langkah perjalanan batinnya.",
+      "speaker": "Narator",
+      "cgId": "cg-pyramids-night",
+      "bgmId": "bgm-desert-mystic",
+      "transition": "crossfade",
+      "highlightedTerms": []
+    }
+  }
+}

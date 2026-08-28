@@ -1,0 +1,90 @@
+[
+  {
+    "id": "thread-1",
+    "bookId": "chronicles-of-aethelgard",
+    "bookTitle": "Chronicles of Aethelgard: The Obsidian Grimoire",
+    "category": "Theories",
+    "title": "Teori: Apakah Parchment of Veritas sebenarnya ditulis oleh Valen dari masa depan?",
+    "content": "Setelah menamatkan Bab II dan membaca kembali penjelasan AI Explain mengenai 'Caelum', aku memperhatikan pola rune pada altar sama persis dengan liontin yang dikenakan Valen di awal cerita. Mungkinkah grimoire ini adalah paradoks waktu yang sengaja dikirimkan untuk membimbing dirinya sendiri?",
+    "authorName": "Elena Arcanist",
+    "authorAvatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Elena",
+    "authorTier": "Imperial Scholar",
+    "timestamp": "2 jam yang lalu",
+    "likesCount": 24,
+    "viewsCount": 142,
+    "comments": [
+      {
+        "id": "comment-101",
+        "authorName": "Kaelen Shadowcaster",
+        "authorTier": "Lorekeeper",
+        "authorAvatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Kaelen",
+        "isVerifiedReader": true,
+        "content": "Analisis yang brilian! Perhatikan juga glif di node-202 saat membicarakan takdir. Warna aura CG berubah dari perak ke emas, sama persis dengan transisi sihir waktu.",
+        "timestamp": "1 jam yang lalu",
+        "likesCount": 8
+      },
+      {
+        "id": "comment-102",
+        "authorName": "Siti Nurhaliza",
+        "authorTier": "Bookstagram Collector",
+        "authorAvatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Siti",
+        "isVerifiedReader": true,
+        "content": "Aku merinding pas klik AI Explain di kata 'Sanctum Arcanum' dan baru sadar ada 7 lapis rantai rune. Detail dunia di Genmoire benar-benar hidup!",
+        "timestamp": "30 menit yang lalu",
+        "likesCount": 5
+      }
+    ]
+  },
+  {
+    "id": "thread-2",
+    "bookId": "the-alchemist",
+    "bookTitle": "The Alchemist (Sang Alkemis)",
+    "category": "Discussions",
+    "title": "Bagaimana konsep 'Maktub' mengubah caramu menghadapi kegagalan?",
+    "content": "Membaca adegan gurun dengan BGM 'Winds of the Sahara' dan overlay gelap 45% memberikan pengalaman kontemplasi yang sangat dalam. Kata 'Maktub' bukan tentang kepasrahan buta, melainkan tentang ketenangan bahwa kita sedang bertumbuh.",
+    "authorName": "Rizky Firmansyah",
+    "authorAvatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Rizky",
+    "authorTier": "Loremaster",
+    "timestamp": "Kemarin",
+    "likesCount": 42,
+    "viewsCount": 310,
+    "comments": [
+      {
+        "id": "comment-201",
+        "authorName": "Bima Saputra",
+        "authorTier": "BookTok Scroller",
+        "authorAvatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Bima",
+        "isVerifiedReader": false,
+        "content": "Jujur awalnya aku cuma penasaran karena buku ini viral di BookTok, tapi setelah baca dengan typewriter effect 30ms dan audio background, aku jadi betah baca sampai tuntas!",
+        "timestamp": "18 jam yang lalu",
+        "likesCount": 12
+      }
+    ]
+  },
+  {
+    "id": "thread-3",
+    "bookId": "atomic-habits",
+    "bookTitle": "Atomic Habits: Kinetic Grimoire",
+    "category": "AI Explains Q&A",
+    "title": "Membahas mekanisme Cue & Craving dalam format Kinetic Reader",
+    "content": "Format NVL membuat konsep psikologi kebiasaan jadi terasa seperti instruksi RPG. Menurut kalian, buku non-fiksi apa lagi yang cocok diadaptasi ke dalam kinetic grimoire?",
+    "authorName": "Citra Dewi",
+    "authorAvatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Citra",
+    "authorTier": "Imperial Scholar",
+    "timestamp": "3 hari yang lalu",
+    "likesCount": 19,
+    "viewsCount": 185,
+    "comments": [
+      {
+        "id": "comment-301",
+        "authorName": "Archivist Valen",
+        "authorTier": "Loremaster",
+        "authorAvatar": "https://api.dicebear.com/7.x/bottts/svg?seed=Valen",
+        "isVerifiedReader": true,
+        "content": "Sapiens dari Yuval Noah Harari atau Deep Work dari Cal Newport akan luar biasa jika dipadukan dengan ambient background dan AI Explain istilah kognitif!",
+        "timestamp": "2 hari yang lalu",
+        "likesCount": 7
+      }
+    ]
+  }
+]

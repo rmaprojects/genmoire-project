@@ -1,0 +1,65 @@
+[
+  {
+    "id": "tsundoku",
+    "title": "Tsundoku",
+    "flavorText": "Buying books is a lifestyle, finishing them is an option.",
+    "secretHint": "Kumpulkan minimal 20 buku di perpustakaan dengan tingkat belum dibaca >75%",
+    "icon": "auto_stories",
+    "rarity": "rare",
+    "conditionDescription": "Collection ≥ 20 books, >75% unfinished"
+  },
+  {
+    "id": "night-owl",
+    "title": "Night Owl",
+    "flavorText": "The grimoire glows brightest when the world is asleep at midnight.",
+    "secretHint": "Tamatkan minimal 3 bab atau buku di antara pukul 22:00 hingga 05:00 subuh",
+    "icon": "dark_mode",
+    "rarity": "uncommon",
+    "conditionDescription": "Read or complete books between 22:00 and 05:00"
+  },
+  {
+    "id": "speed-reader",
+    "title": "Speed Reader",
+    "flavorText": "Words blur past your eyes like swift incantations.",
+    "secretHint": "Selesaikan 3 buku dalam tempo cepat namun tetap memenuhi batas waktu minimal pemahaman",
+    "icon": "bolt",
+    "rarity": "uncommon",
+    "conditionDescription": "Complete 3 books within 1.5x of estimated reading speed"
+  },
+  {
+    "id": "completionist",
+    "title": "The Completionist",
+    "flavorText": "No book left behind; every page unsealed to the final period.",
+    "secretHint": "Raih 100% completion rate pada minimal 5 buku yang telah kamu mulai",
+    "icon": "verified",
+    "rarity": "epic",
+    "conditionDescription": "100% finish rate on all started books (min. 5 books)"
+  },
+  {
+    "id": "curious-mind",
+    "title": "Curious Mind",
+    "flavorText": "Knowledge is the real magic; you question every ancient phrase.",
+    "secretHint": "Gunakan fitur Context-Aware AI Explain sebanyak minimal 15 kali",
+    "icon": "psychology_alt",
+    "rarity": "common",
+    "conditionDescription": "Use AI Explain >= 15 times"
+  },
+  {
+    "id": "marathon-reader",
+    "title": "Marathon Reader",
+    "flavorText": "A disciplined mind burning with an unbroken 30-day streak flame.",
+    "secretHint": "Pertahankan reading streak berturut-turut selama minimal 7 hari aktif",
+    "icon": "local_fire_department",
+    "rarity": "epic",
+    "conditionDescription": "Maintain consecutive daily reading streak"
+  },
+  {
+    "id": "bibliophile",
+    "title": "Bibliophile",
+    "flavorText": "A walking library. The scent of aged parchment flows in your veins.",
+    "secretHint": "Koleksi dan tamatkan total 25 grimoire dalam perjalanan membacamu",
+    "icon": "workspace_premium",
+    "rarity": "legendary",
+    "conditionDescription": "Complete 25+ books total"
+  }
+]

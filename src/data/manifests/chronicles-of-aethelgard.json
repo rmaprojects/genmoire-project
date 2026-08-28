@@ -1,0 +1,216 @@
+{
+  "manifestId": "manifest-aethelgard-v1",
+  "bookId": "chronicles-of-aethelgard",
+  "title": "Chronicles of Aethelgard: The Obsidian Grimoire",
+  "author": "Archivist Valen & Lady Elenor",
+  "coverUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+  "synopsis": "Di puncak menara Obsidian Citadel, seorang cendekiawan muda menemukan sebuah naskah kuno yang berbisik dalam bahasa terlarang.",
+  "genre": ["Dark Fantasy", "Arcane Mystery", "Visual Novel"],
+  "tags": ["Full-Screen NVL", "Typewriter", "Ambient Audio", "AI Explains"],
+  "isbn": "978-602-03-8591-2",
+  "epubHash": "e2fc714c4727ee9395f324cd2e7f331f",
+  "estimatedReadTimeMinutes": 25,
+  "totalChapters": 2,
+  "authorControl": {
+    "hasCustomAssets": true,
+    "allowsAiVisuals": true,
+    "supportsPureKineticMode": true
+  },
+  "pageChallenge": {
+    "question": "Buka halaman 42 buku fisikmu, apa kata ketiga di baris pertama?",
+    "pageNumber": 42,
+    "lineNumber": 1,
+    "expectedWord": "obsidian",
+    "hint": "Batu vulkanik hitam kaca yang menjadi nama menara benteng."
+  },
+  "cgs": {
+    "cg-citadel-night": {
+      "id": "cg-citadel-night",
+      "url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
+      "alt": "Menara Obsidian Citadel menjulang di bawah langit malam berbintang dengan aura sihir keemasan",
+      "prompt": "Cinematic visual novel background, towering gothic dark fantasy castle obsidian spires under starry midnight sky, golden arcane aura, atmospheric lighting",
+      "isAiGenerated": true
+    },
+    "cg-ancient-library": {
+      "id": "cg-ancient-library",
+      "url": "https://images.unsplash.com/photo-1507842229451-9f01079ca4b5?auto=format&fit=crop&w=1920&q=80",
+      "alt": "Perpustakaan arkana kuno dengan ribuan gulungan bercahaya dan lilin-lilin melayang",
+      "prompt": "Grand arcane library filled with towering mahogany bookshelves, floating wax candles, glowing ancient runic parchment scrolls, warm sepia lighting",
+      "isAiGenerated": true
+    },
+    "cg-glowing-grimoire": {
+      "id": "cg-glowing-grimoire",
+      "url": "https://images.unsplash.com/photo-1532012164546-f432f2e3edd4?auto=format&fit=crop&w=1920&q=80",
+      "alt": "Sebuah grimoire tua terbuka di atas meja altar dengan glif magis bersinar keemasan",
+      "prompt": "Macro view of an ancient leather-bound grimoire resting on a stone lectern, glowing golden runic glyphs rising from the parchment, mystical dust motes",
+      "isAiGenerated": true
+    },
+    "cg-desert-storm": {
+      "id": "cg-desert-storm",
+      "url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1920&q=80",
+      "alt": "Gurun pasir membentang luas di bawah langit senja keemasan dengan bayang-bayang piramida di kejauhan",
+      "prompt": "Vast desert dunes under twilight golden hour, distant monolithic ruins, mystical wind blowing glowing sands",
+      "isAiGenerated": true
+    }
+  },
+  "bgms": {
+    "bgm-arcane-study": {
+      "id": "bgm-arcane-study",
+      "title": "Whispers of the Sanctum (Ambient Strings)",
+      "url": "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3",
+      "loop": true,
+      "volume": 0.6
+    },
+    "bgm-mystic-discovery": {
+      "id": "bgm-mystic-discovery",
+      "title": "Chants of the Runekeepers",
+      "url": "https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3",
+      "loop": true,
+      "volume": 0.7
+    }
+  },
+  "explains": {
+    "Obsidian Citadel": {
+      "term": "Obsidian Citadel",
+      "contextType": "plot",
+      "shortDefinition": "Benteng arkana pusat arsip kekaisaran Aethelgard.",
+      "inContextExplanation": "Obsidian Citadel adalah benteng menara tertinggi di kerajaan utara, dibangun dari batuan kaca vulkanik hitam yang kebal terhadap guncangan sihir elemen. Di sinilah para Archivist mengumpulkan naskah terlarang.",
+      "authorNote": "Batu obsidian di sini melambangkan isolasi intelektual dari dunia luar."
+    },
+    "Sanctum Arcanum": {
+      "term": "Sanctum Arcanum",
+      "contextType": "syntax",
+      "shortDefinition": "Istilah Latin hibrida: Ruang perlindungan sakral para tetua mantra.",
+      "inContextExplanation": "Frasa ini merujuk pada kubah terdalam perpustakaan yang disegel oleh tujuh lapis rantai rune. Hanya pemegang Segel Cendekiawan yang diizinkan melangkah masuk tanpa terbakar hangus.",
+      "authorNote": "Dipinjam dari tradisi skolastik abad pertengahan dengan adaptasi magis."
+    },
+    "Parchment of Veritas": {
+      "term": "Parchment of Veritas",
+      "contextType": "idiom",
+      "shortDefinition": "Metafora untuk kejujuran mutlak yang membakar kepalsuan.",
+      "inContextExplanation": "Dalam sastra Aethelgard, ketika teks dikatakan tertulis di atas 'Parchment of Veritas', itu menandakan ikatan sumpah yang tidak dapat dilanggar oleh manusia maupun dewa.",
+      "authorNote": "Penting untuk memahami motif mengapa Valen tidak bisa berbohong di hadapan Dewan."
+    },
+    "Veritas": {
+      "term": "Veritas",
+      "contextType": "vocabulary",
+      "shortDefinition": "Kebenaran murni (Latin).",
+      "inContextExplanation": "Digunakan sebagai nama intisari filosofis dari sihir penglihatan masa lalu dalam mitologi Aethelgard."
+    },
+    "Caelum": {
+      "term": "Caelum",
+      "contextType": "vocabulary",
+      "shortDefinition": "Langit kosmik atau surga bintang.",
+      "inContextExplanation": "Dalam konteks astronomi kuno Aethelgard, Caelum merujuk pada lapisan atmosfer magis tempat energi ethereal berputar setiap gerhana."
+    }
+  },
+  "chapters": [
+    {
+      "id": "ch-1",
+      "title": "Bab I: Bisikan di Balik Rak Menara",
+      "order": 1,
+      "nodeIds": ["node-101", "node-102", "node-103", "node-104", "node-105"]
+    },
+    {
+      "id": "ch-2",
+      "title": "Bab II: Gulungan Veritas Terbuka",
+      "order": 2,
+      "nodeIds": ["node-201", "node-202", "node-203", "node-204", "node-205"]
+    }
+  ],
+  "nodes": {
+    "node-101": {
+      "id": "node-101",
+      "text": "Malam itu, hembusan angin beku menyusup melalui celah jendela kaca bertatah emas di puncak Obsidian Citadel. Di luar sana, ribuan bintang bertaburan dingin di atas hamparan salju abadi.",
+      "speaker": "Narator",
+      "cgId": "cg-citadel-night",
+      "bgmId": "bgm-arcane-study",
+      "transition": "crossfade",
+      "highlightedTerms": ["Obsidian Citadel"]
+    },
+    "node-102": {
+      "id": "node-102",
+      "text": "Valen melangkah pelan menuruni tangga spiral marmer menuju kedalaman Sanctum Arcanum. Langkah kakinya memecah kesunyian yang telah bertahan selama tiga ratus tahun.",
+      "speaker": "Narator",
+      "cgId": "cg-ancient-library",
+      "bgmId": "bgm-arcane-study",
+      "transition": "crossfade",
+      "highlightedTerms": ["Sanctum Arcanum"]
+    },
+    "node-103": {
+      "id": "node-103",
+      "text": "\"Jika Dewan Agung mengetahui keberadaanku di sini,\" bisik Valen dalam hati sambil meraba jubah arkana miliknya, \"hukuman pembuangan ke gurun es adalah hal paling ringan yang akan kuterima.\"",
+      "speaker": "Valen",
+      "speakerTitle": "Novice Archivist",
+      "cgId": "cg-ancient-library",
+      "bgmId": "bgm-arcane-study",
+      "transition": "instant",
+      "highlightedTerms": []
+    },
+    "node-104": {
+      "id": "node-104",
+      "text": "Namun pandangan matanya tertuju pada sebuah altar obsidian di tengah ruangan. Di sana, sebuah kitab tebal bersampul kulit naga purba memancarkan denyut cahaya keemasan hangat.",
+      "speaker": "Narator",
+      "cgId": "cg-glowing-grimoire",
+      "bgmId": "bgm-mystic-discovery",
+      "transition": "crossfade",
+      "highlightedTerms": []
+    },
+    "node-105": {
+      "id": "node-105",
+      "text": "Kitab itu tidak hanya diam. Saat ujung jemari Valen menyentuh sudut sampulnya, udara bergetar dan halaman-halamannya terbuka sendiri dengan derak lembut perkamen tua...",
+      "speaker": "Narator",
+      "cgId": "cg-glowing-grimoire",
+      "bgmId": "bgm-mystic-discovery",
+      "transition": "crossfade",
+      "highlightedTerms": []
+    },
+    "node-201": {
+      "id": "node-201",
+      "text": "Lembaran pertama terkuak, menampakkan tulisan bercahaya yang diukir langsung di atas Parchment of Veritas. Tinta emas itu tampak hidup, mengalir seperti cairan bintang di atas kertas.",
+      "speaker": "Narator",
+      "cgId": "cg-glowing-grimoire",
+      "bgmId": "bgm-mystic-discovery",
+      "transition": "crossfade",
+      "highlightedTerms": ["Parchment of Veritas", "Veritas"]
+    },
+    "node-202": {
+      "id": "node-202",
+      "text": "\"Bagi siapapun yang mencari kebenaran tentang Caelum dan asal-usul sihir grimoire: ketahuilah bahwa takdir tidak diukir oleh batu, melainkan oleh tekad mereka yang berani membaca semesta.\"",
+      "speaker": "Bisikan Kitab",
+      "speakerTitle": "The Eternal Whisper",
+      "cgId": "cg-glowing-grimoire",
+      "bgmId": "bgm-mystic-discovery",
+      "transition": "instant",
+      "highlightedTerms": ["Caelum"]
+    },
+    "node-203": {
+      "id": "node-203",
+      "text": "Sebuah kilatan cahaya memenuhi ruangan. Visi masa depan melintas di depan mata Valen: hamparan gurun pasir keemasan di mana rahasia peradaban pertama terkubur rapi di bawah debu waktu.",
+      "speaker": "Narator",
+      "cgId": "cg-desert-storm",
+      "bgmId": "bgm-mystic-discovery",
+      "transition": "crossfade",
+      "highlightedTerms": []
+    },
+    "node-204": {
+      "id": "node-204",
+      "text": "\"Aku mengerti sekarang,\" desah Valen pelan. Matanya kini bersinar dengan pemahaman baru. \"Buku ini bukan sekadar catatan masa lalu. Ini adalah peta menuju kebangkitan sejati.\"",
+      "speaker": "Valen",
+      "speakerTitle": "Awakened Scholar",
+      "cgId": "cg-desert-storm",
+      "bgmId": "bgm-mystic-discovery",
+      "transition": "instant",
+      "highlightedTerms": []
+    },
+    "node-205": {
+      "id": "node-205",
+      "text": "Dengan mantap, Valen menutup grimoire tersebut, menyelipkannya ke dalam jubahnya, dan berbalik menghadap lorong gelap. Petualangannya sebagai penjaga grimoire baru saja dimulai.",
+      "speaker": "Narator",
+      "cgId": "cg-citadel-night",
+      "bgmId": "bgm-arcane-study",
+      "transition": "crossfade",
+      "highlightedTerms": []
+    }
+  }
+}
