@@ -120,7 +120,7 @@ const onChallengeSuccess = () => {
           <span class="material-symbols-outlined text-secondary text-2xl">verified_user</span>
           <div class="text-xs">
             <p class="font-bold text-on-surface text-sm">Mode Teks Murni & Pilihan Pembaca</p>
-            <p class="text-text-muted mt-0.5">Tersedia opsi membaca naskah polos tanpa visual atau audio.</p>
+            <p class="text-text-muted mt-0.5">Tersedia opsi membaca buku polos tanpa visual atau audio.</p>
           </div>
         </div>
 

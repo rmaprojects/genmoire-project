@@ -15,6 +15,7 @@ import AiExplainDrawer from '@/components/reader/AiExplainDrawer.vue';
 import ReadingHistoryDrawer from '@/components/reader/ReadingHistoryDrawer.vue';
 import SettingsDrawer from '@/components/layout/SettingsDrawer.vue';
 import RefinementTerminal from '@/components/terminal/RefinementTerminal.vue';
+import BookCompletionOverlay from '@/components/reader/BookCompletionOverlay.vue';
 import TierUpOverlay from '@/components/dashboard/TierUpOverlay.vue';
 import TraitToast from '@/components/dashboard/TraitToast.vue';
 
@@ -137,6 +138,15 @@ watch(
       :targetPrompt="readerStore.refinementTargetPrompt"
       @update:modelValue="readerStore.isRefinementTerminalOpen = $event"
       @refined="onCgRefined"
+    />
+    <BookCompletionOverlay
+      v-model="readerStore.isBookCompleted"
+      :bookTitle="readerStore.currentManifest?.title || 'Genmoire'"
+      :bookAuthor="readerStore.currentManifest?.author"
+      :coverUrl="readerStore.currentManifest?.coverUrl"
+      :totalChapters="readerStore.currentManifest?.totalChapters"
+      :durationMinutes="readerStore.currentManifest?.estimatedReadTimeMinutes"
+      @restart="readerStore.restartBook"
     />
     <TierUpOverlay />
     <TraitToast />

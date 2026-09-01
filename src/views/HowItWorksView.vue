@@ -34,7 +34,7 @@ const pipelineSteps: PipelineStep[] = [
   },
   {
     number: '02',
-    badge: 'PENGURAIAN NASKAH',
+    badge: 'PENGURAIAN BUKU',
     title: 'Segmentasi Adegan & Struktur Paragraf',
     subtitle: 'Mengurai Dinding Teks Panjang Menjadi Alur yang Mengalir Ringan',
     description:
@@ -42,7 +42,7 @@ const pipelineSteps: PipelineStep[] = [
     explanationList: [
       'Memilah babak cerita menjadi unit-unit adegan visual yang berkesinambungan.',
       'Menghilangkan beban kognitif membaca buku tebal dengan menampilkan 1 paragraf bertahap.',
-      'Setiap kata naskah asli pengarang dipertahankan 100% utuh tanpa dipotong atau diubah maknanya.',
+      'Setiap kata buku asli pengarang dipertahankan 100% utuh tanpa dipotong atau diubah maknanya.',
     ],
     visualType: 'parsing',
   },
@@ -56,7 +56,7 @@ const pipelineSteps: PipelineStep[] = [
     explanationList: [
       'Membantu pembaca memvisualisasikan latar dunia yang digambarkan oleh penulis.',
       'Lapisan Dark Scrim 45% memastikan huruf selalu memiliki kontras tinggi dan tidak silau di mata.',
-      'Mode Pure Kinetic tersedia bagi pembaca yang ingin membaca naskah murni tanpa gambar.',
+      'Mode Pure Kinetic tersedia bagi pembaca yang ingin membaca teks murni tanpa gambar.',
     ],
     visualType: 'visual',
   },
@@ -222,7 +222,7 @@ onUnmounted(() => {
           Bagaimana Genmoire Mengubah Buku Biasa Menjadi <span class="text-primary underline decoration-primary/30 underline-offset-8">Visual Novel</span>?
         </h1>
         <p class="font-ui-body text-base sm:text-xl text-text-secondary leading-relaxed sm:leading-[1.65] max-w-[65ch] mx-auto text-balance">
-          Dari novel fisik ber-ISBN atau file EPUB digital, ikuti 5 langkah sederhana bagaimana teknologi Genmoire merangkai teks, ilustrasi latar, dan tata suara menjadi naskah visual interaktif langsung di peramban Anda.
+          Dari novel fisik ber-ISBN atau file EPUB digital, ikuti 5 langkah sederhana bagaimana teknologi Genmoire merangkai teks, ilustrasi latar, dan tata suara menjadi buku visual interaktif langsung di peramban Anda.
         </p>
       </section>
 
@@ -240,20 +240,20 @@ onUnmounted(() => {
           </div>
 
           <!-- Step Content Card -->
-          <div class="step-content-card bg-surface-secondary border border-border-subtle rounded-3xl p-6 sm:p-10 shadow-warm-xl space-y-8">
+          <div class="step-content-card bg-surface-secondary dark:bg-[#221E1A] border border-border-subtle dark:border-transparent rounded-3xl p-6 sm:p-10 shadow-warm-xl space-y-8">
             
             <!-- Step Header Meta -->
             <div>
               <span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary font-sans text-xs font-bold uppercase tracking-wider mb-2">
                 {{ step.badge }}
               </span>
-              <h2 class="font-display-lg text-2xl sm:text-3xl font-extrabold text-on-surface tracking-tight mb-2">
+              <h2 class="font-display-lg text-2xl sm:text-3xl font-extrabold text-on-surface dark:text-[#F3EFE6] tracking-tight mb-2">
                 {{ step.title }}
               </h2>
               <p class="font-ui-body text-sm sm:text-base font-semibold text-primary mb-3">
                 {{ step.subtitle }}
               </p>
-              <p class="font-ui-body text-sm sm:text-base text-text-secondary leading-relaxed">
+              <p class="font-ui-body text-sm sm:text-base text-text-secondary dark:text-[#C5BBAF] leading-relaxed">
                 {{ step.description }}
               </p>
             </div>
@@ -266,7 +266,7 @@ onUnmounted(() => {
                 <div class="flex items-center justify-between text-primary-fixed-dim border-b border-white/10 pb-2">
                   <span class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-sm">qr_code_scanner</span>
-                    <span>DETEKSI NASKAH LOKAL</span>
+                    <span>DETEKSI BUKU LOKAL</span>
                   </span>
                   <span class="text-emerald-400 font-bold">100% IN-BROWSER</span>
                 </div>
@@ -277,7 +277,7 @@ onUnmounted(() => {
                       <span class="material-symbols-outlined text-primary text-base">barcode</span>
                       ISBN: 978-602-03-8591-2
                     </span>
-                    <p class="text-[11px] text-zinc-400 font-ui-body">Terverifikasi cocok dengan naskah Chronicles of Aethelgard</p>
+                    <p class="text-[11px] text-zinc-400 font-ui-body">Terverifikasi cocok dengan buku Chronicles of Aethelgard</p>
                   </div>
                   <div class="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1">
                     <span class="text-zinc-500 text-[11px] block">Opsi 2: File Digital</span>
@@ -301,7 +301,7 @@ onUnmounted(() => {
                 </div>
                 <div class="space-y-2 font-reading-body text-xs sm:text-sm">
                   <div class="p-3 rounded-xl bg-white/5 border-l-2 border-zinc-600 text-zinc-400 line-through opacity-50">
-                    Naskah tebal konvensional yang padat dan membuat mata lelah...
+                    Buku tebal konvensional yang padat dan membuat mata lelah...
                   </div>
                   <div class="p-4 rounded-xl bg-primary/10 border-l-4 border-primary text-white space-y-1">
                     <span class="text-[10px] font-sans text-primary font-bold uppercase tracking-wider block">Segmen Aktif: Paragraf 1</span>
@@ -414,7 +414,7 @@ onUnmounted(() => {
           Coba Rasakan Sendiri Pengalaman Membacanya
         </h2>
         <p class="font-ui-body text-base sm:text-lg text-text-secondary leading-relaxed max-w-[60ch] mx-auto text-balance">
-          Buka novel interaktif pertama Anda sekarang dan nikmati perpaduan naskah sastra, visual sinematik, serta audio dinamis di Genmoire.
+          Buka novel interaktif pertama Anda sekarang dan nikmati perpaduan teks sastra, visual sinematik, serta audio dinamis di Genmoire.
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-4 pt-4">

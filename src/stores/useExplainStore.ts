@@ -72,7 +72,7 @@ export const useExplainStore = defineStore('explain', () => {
       foundEntry = {
         term: term,
         contextType: 'vocabulary',
-        shortDefinition: `Istilah kontekstual dalam ${manifest?.title || 'naskah ini'}.`,
+        shortDefinition: `Istilah kontekstual dalam ${manifest?.title || 'buku ini'}.`,
         inContextExplanation: `Frasa "${term}" membawa bobot tematik mengenai perjalanan karakter dan atmosfer sastra yang dibangun oleh sang penulis pada bab ini.`,
         authorNote: 'Penjelasan diolah secara kontekstual berbasis leksikon semesta narasi.',
       };

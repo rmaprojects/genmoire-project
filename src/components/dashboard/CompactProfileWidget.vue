@@ -21,44 +21,46 @@ const displayName = computed(() => {
 </script>
 
 <template>
-  <div class="bg-surface-secondary rounded-3xl p-5 sm:p-6 border border-border-subtle/60 dark:border-transparent shadow-warm-md space-y-5">
-    <!-- User Profile Header -->
-    <div class="flex items-center gap-3.5 pb-4 border-b border-border-subtle/70">
-      <div class="relative w-13 h-13 rounded-2xl overflow-hidden border border-border-subtle/60 dark:border-transparent shrink-0 shadow-xs">
+  <div class="bg-surface-secondary rounded-3xl p-4 sm:p-5 border border-border-subtle/60 dark:border-transparent shadow-warm-md space-y-3.5">
+    <!-- 1. User Profile Header (Horizontal Single Row) -->
+    <div class="flex items-center gap-3 pb-3 border-b border-border-subtle/60 dark:border-white/5">
+      <!-- Avatar Kompak -->
+      <div class="relative w-12 h-12 rounded-full overflow-hidden border border-border-subtle/60 dark:border-white/10 shrink-0 shadow-xs">
         <img
           :src="authStore.currentUser.avatar"
           :alt="authStore.currentUser.name"
           class="w-full h-full object-cover"
         />
-        <div class="absolute bottom-0 right-0 w-3 h-3 bg-secondary rounded-full border-2 border-surface-secondary" />
+        <div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-secondary rounded-full border-2 border-surface-secondary" />
       </div>
 
+      <!-- Nama Pengguna & Email (Flex-1 Responsif) -->
       <div class="flex-1 min-w-0">
-        <div class="flex items-center justify-between gap-1">
-          <RouterLink
-            to="/profile"
-            class="font-display-lg text-base font-bold text-on-surface dark:text-[#F3EFE6] hover:text-primary transition-colors truncate block"
-          >
-            {{ displayName }}
-          </RouterLink>
-        </div>
-        <p class="text-xs text-text-secondary dark:text-[#C5BBAF] truncate">
+        <RouterLink
+          to="/profile"
+          class="font-display-lg text-base font-bold text-on-surface dark:text-[#F3EFE6] hover:text-primary transition-colors truncate block leading-tight"
+          :title="displayName"
+        >
+          {{ displayName }}
+        </RouterLink>
+        <p class="text-xs text-text-secondary dark:text-[#C5BBAF] truncate mt-0.5 font-sans">
           {{ authStore.currentUser.email }}
         </p>
       </div>
 
+      <!-- Ikon Settings / Gear -->
       <RouterLink
         to="/profile"
-        class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-text-muted hover:text-primary border border-border-subtle/60 dark:border-transparent transition-colors"
-        title="Buka Pengaturan Profil"
+        class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-text-muted hover:text-on-surface dark:hover:text-[#F3EFE6] border border-border-subtle/50 dark:border-white/5 transition-colors shrink-0 cursor-pointer"
+        title="Pengaturan Profil"
       >
-        <span class="material-symbols-outlined text-lg">settings</span>
+        <span class="material-symbols-outlined text-[18px]">settings</span>
       </RouterLink>
     </div>
 
-    <!-- 3 Compact Stat Pills -->
+    <!-- 2. 3 Compact Stat Pills -->
     <div class="grid grid-cols-3 gap-2">
-      <div class="p-2.5 rounded-2xl bg-surface-container border border-border-subtle/60 dark:border-transparent text-center shadow-2xs">
+      <div class="py-2 px-1.5 rounded-2xl bg-surface-container border border-border-subtle/40 dark:border-transparent text-center">
         <span class="text-sm font-extrabold font-display-lg text-on-surface dark:text-[#F3EFE6] block leading-tight">
           {{ profileStore.currentStreak }}d
         </span>
@@ -67,7 +69,7 @@ const displayName = computed(() => {
         </span>
       </div>
 
-      <div class="p-2.5 rounded-2xl bg-surface-container border border-border-subtle/60 dark:border-transparent text-center shadow-2xs">
+      <div class="py-2 px-1.5 rounded-2xl bg-surface-container border border-border-subtle/40 dark:border-transparent text-center">
         <span class="text-sm font-extrabold font-display-lg text-on-surface dark:text-[#F3EFE6] block leading-tight">
           {{ profileStore.totalMinutesRead }}m
         </span>
@@ -76,7 +78,7 @@ const displayName = computed(() => {
         </span>
       </div>
 
-      <div class="p-2.5 rounded-2xl bg-surface-container border border-border-subtle/60 dark:border-transparent text-center shadow-2xs">
+      <div class="py-2 px-1.5 rounded-2xl bg-surface-container border border-border-subtle/40 dark:border-transparent text-center">
         <span class="text-sm font-extrabold font-display-lg text-on-surface dark:text-[#F3EFE6] block leading-tight">
           {{ profileStore.explainCount }}
         </span>
@@ -86,24 +88,24 @@ const displayName = computed(() => {
       </div>
     </div>
 
-    <!-- Pangkat & Progress Section -->
-    <div class="p-4 rounded-2xl bg-surface-container border border-border-subtle/60 dark:border-transparent space-y-3 shadow-2xs">
+    <!-- 3. Pangkat & Level Progress Section -->
+    <div class="p-3 sm:p-3.5 rounded-2xl bg-surface-container border border-border-subtle/40 dark:border-transparent space-y-2.5">
       <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-base">{{ profileStore.currentTierInfo.emblemIcon }}</span>
+        <div class="flex items-center gap-2 min-w-0">
+          <div class="w-6 h-6 rounded-lg bg-primary/15 text-primary flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-sm">{{ profileStore.currentTierInfo.emblemIcon }}</span>
           </div>
-          <div>
-            <p class="text-xs font-bold text-on-surface dark:text-[#F3EFE6] leading-tight">
+          <div class="min-w-0">
+            <p class="text-xs font-bold text-on-surface dark:text-[#F3EFE6] leading-tight truncate">
               Tier {{ profileStore.currentTierInfo.tier }} • {{ profileStore.currentTierInfo.title }}
             </p>
-            <p class="text-[11px] text-text-muted dark:text-[#9E9385]">
+            <p class="text-[10px] text-text-muted dark:text-[#9E9385] truncate">
               {{ profileStore.nextTierInfo ? `Sisa ${profileStore.booksRemainingToNextTier} buku lagi` : 'Pangkat Tertinggi' }}
             </p>
           </div>
         </div>
 
-        <span class="text-xs font-bold text-primary font-sans">
+        <span class="text-xs font-bold text-primary font-sans shrink-0 ml-2">
           {{ profileStore.tierProgressPercent }}%
         </span>
       </div>
@@ -114,7 +116,7 @@ const displayName = computed(() => {
         height="sm"
       />
 
-      <div class="flex justify-between items-center text-[10px] text-text-muted dark:text-[#9E9385] font-sans pt-0.5">
+      <div class="flex justify-between items-center text-[10px] text-text-muted dark:text-[#9E9385] font-sans">
         <span>{{ profileStore.booksCompleted }} buku tamat</span>
         <RouterLink to="/tiers" class="text-primary font-bold hover:underline">
           Lihat Semua Pangkat →

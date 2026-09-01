@@ -18,7 +18,7 @@ import GButton from '@/components/common/GButton.vue';
         Ruang Diskusi & Teori Alur
       </h3>
       <p class="text-xs text-text-secondary dark:text-[#C5BBAF] mt-1.5 leading-relaxed">
-        Diskusikan misteri naskah, analisis karakter, dan bertukar catatan interpretasi bersama pembaca terverifikasi.
+        Diskusikan misteri buku, analisis karakter, dan bertukar catatan interpretasi bersama pembaca terverifikasi.
       </p>
     </div>
 

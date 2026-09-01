@@ -189,6 +189,8 @@ export const useReaderStore = defineStore('reader', () => {
     isAudioPlaying.value = false;
   };
 
+  const isBookCompleted = ref<boolean>(false);
+
   const advance = () => {
     if (isTypewriting.value) {
       // If currently typewriting, instant reveal full text
@@ -206,6 +208,7 @@ export const useReaderStore = defineStore('reader', () => {
       applyCurrentNode();
     } else {
       // Book finished!
+      isBookCompleted.value = true;
       if (currentManifest.value) {
         profileStore.recordBookCompletion(
           currentManifest.value.bookId,
@@ -214,6 +217,13 @@ export const useReaderStore = defineStore('reader', () => {
         );
       }
     }
+  };
+
+  const restartBook = () => {
+    currentChapterIndex.value = 0;
+    currentNodeIndex.value = 0;
+    isBookCompleted.value = false;
+    applyCurrentNode();
   };
 
   const previous = () => {
@@ -277,9 +287,11 @@ export const useReaderStore = defineStore('reader', () => {
     isLastChapter,
     isRefinementTerminalOpen,
     refinementTargetPrompt,
+    isBookCompleted,
     loadBook,
     advance,
     previous,
+    restartBook,
     finishTypewriter,
     togglePureKineticMode,
     triggerMismatchReport,

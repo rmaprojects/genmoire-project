@@ -1,0 +1,140 @@
+{
+  "manifestId": "manifest-atomic-habits-v1",
+  "bookId": "atomic-habits",
+  "title": "Atomic Habits: Kinetic Grimoire",
+  "author": "James Clear",
+  "coverUrl": "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=1200&q=80",
+  "synopsis": "Perubahan kecil luar biasa yang dianimasikan dalam visualisasi sistem kinetic. Memahami loop kebiasaan, cue, craving, response, dan reward secara visual dan mendalam.",
+  "genre": ["Self Improvement", "Cognitive Science"],
+  "tags": ["Bestseller", "Kinetic Mode", "Audio BGM", "Habit System"],
+  "isbn": "978-0-7352-1129-2",
+  "epubHash": "c3d4e5f67890abcdef1234567890abcd",
+  "estimatedReadTimeMinutes": 35,
+  "totalChapters": 2,
+  "authorControl": {
+    "hasCustomAssets": true,
+    "allowsAiVisuals": true,
+    "supportsPureKineticMode": true
+  },
+  "pageChallenge": {
+    "question": "Buka halaman 25 buku fisikmu, apa kata kedua di judul bab pertama?",
+    "pageNumber": 25,
+    "lineNumber": 1,
+    "expectedWord": "kebiasaan",
+    "hint": "Perilaku otomatis yang dilakukan berulang kali."
+  },
+  "cgs": {
+    "cg-habits-system": {
+      "id": "cg-habits-system",
+      "url": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1920&q=80",
+      "alt": "Meja studi akademis dengan buku catatan dan cahaya matahari pagi",
+      "prompt": "Warm sunlit study desk with open leather journal and scientific schematics of habit loops",
+      "isAiGenerated": false
+    },
+    "cg-compounding-graph": {
+      "id": "cg-compounding-graph",
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1920&q=80",
+      "alt": "Kurva eksponensial keemasan yang merepresentasikan 1% compounding growth",
+      "prompt": "Golden glowing exponential curve rising in dark ambient scientific study room",
+      "isAiGenerated": false
+    }
+  },
+  "bgms": {
+    "bgm-focus-ambient": {
+      "id": "bgm-focus-ambient",
+      "title": "Deep Focus Architecture (Ambient Lo-Fi)",
+      "url": "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3",
+      "loop": true,
+      "volume": 0.45
+    }
+  },
+  "explains": {
+    "Habit Loop": {
+      "term": "Habit Loop",
+      "contextType": "plot",
+      "shortDefinition": "Siklus neurologis 4 tahap pembentuk kebiasaan manusia: Cue, Craving, Response, dan Reward.",
+      "inContextExplanation": "Dalam rekayasa perilaku, setiap kebiasaan berakar dari petunjuk (cue) yang memicu keinginan (craving), mendorong respons tindakan, dan menghasilkan ganjaran kepuasan otak (reward).",
+      "authorNote": "Fondasi hukum perubahan perilaku yang dirumuskan dalam buku ini."
+    },
+    "1% Compounding": {
+      "term": "1% Compounding",
+      "contextType": "syntax",
+      "shortDefinition": "Kekuatan perbaikan 1% setiap hari yang berlipat ganda menjadi 37 kali lipat lebih baik dalam setahun.",
+      "inContextExplanation": "Dampak kebiasaan berlipat ganda seperti bunga majemuk uang. Peningkatan kecil yang tampak sepele hari ini akan bertransformasi menjadi lompatan prestasi raksasa dalam jangka panjang.",
+      "authorNote": "Hukum matematika pertumbuhan konsisten."
+    },
+    "Plateau of Latent Potential": {
+      "term": "Plateau of Latent Potential",
+      "contextType": "vocabulary",
+      "shortDefinition": "Dataran Potensi Laten; fase di mana usaha keras belum menampakkan hasil kasat mata sebelum titik tembus (breakthrough).",
+      "inContextExplanation": "Sering disalahartikan sebagai kegagalan, padahal energi sedang terkumpul seperti es batu yang dipanaskan perlahan dari 25 ke 31 derajat sebelum meleleh di 32 derajat.",
+      "authorNote": "Peringatan psikologis agar tidak menyerah di tengah jalan."
+    }
+  },
+  "chapters": [
+    {
+      "id": "ch-1",
+      "title": "Bab I: Kekuatan Mengejutkan dari Kebiasaan Mikro",
+      "order": 1,
+      "nodeIds": ["node-ah1", "node-ah2", "node-ah3"]
+    },
+    {
+      "id": "ch-2",
+      "title": "Bab II: Mengapa Sistem Mengalahkan Ambisi",
+      "order": 2,
+      "nodeIds": ["node-ah4", "node-ah5", "node-ah6"]
+    }
+  ],
+  "nodes": {
+    "node-ah1": {
+      "id": "node-ah1",
+      "text": "Sangat mudah untuk melebih-lebihkan arti penting dari satu momen penentu yang dramatis, dan meremehkan nilai membuat perbaikan-perbaikan kecil setiap hari.",
+      "speaker": "James Clear",
+      "speakerTitle": "Pengarang",
+      "cgId": "cg-habits-system",
+      "bgmId": "bgm-focus-ambient",
+      "highlightedTerms": ["1% Compounding"]
+    },
+    "node-ah2": {
+      "id": "node-ah2",
+      "text": "Jika Anda bisa menjadi 1 persen lebih baik setiap hari selama satu tahun, Anda akan berakhir 37 kali lebih baik pada saat tahun tersebut berakhir.",
+      "speaker": "James Clear",
+      "speakerTitle": "Pengarang",
+      "cgId": "cg-compounding-graph",
+      "bgmId": "bgm-focus-ambient",
+      "highlightedTerms": ["1% Compounding", "Plateau of Latent Potential"]
+    },
+    "node-ah3": {
+      "id": "node-ah3",
+      "text": "Kebiasaan adalah bunga majemuk dari perbaikan diri. Efek dari kebiasaan Anda berlipat ganda seiring Anda mengulanginya dari hari ke hari.",
+      "cgId": "cg-compounding-graph",
+      "bgmId": "bgm-focus-ambient",
+      "highlightedTerms": ["Habit Loop"]
+    },
+    "node-ah4": {
+      "id": "node-ah4",
+      "text": "Anda tidak naik ke tingkat sasaran Anda. Anda jatuh ke tingkat sistem Anda.",
+      "speaker": "James Clear",
+      "speakerTitle": "Pengarang",
+      "cgId": "cg-habits-system",
+      "bgmId": "bgm-focus-ambient",
+      "highlightedTerms": ["Habit Loop"]
+    },
+    "node-ah5": {
+      "id": "node-ah5",
+      "text": "Fokus pada sistem berarti menyukai prosesnya. Ketika Anda jatuh cinta pada proses dan bukan sekadar produk akhir, Anda tidak perlu menunggu izin untuk merasa bahagia.",
+      "cgId": "cg-habits-system",
+      "bgmId": "bgm-focus-ambient",
+      "highlightedTerms": ["Plateau of Latent Potential"]
+    },
+    "node-ah6": {
+      "id": "node-ah6",
+      "text": "Setiap tindakan yang Anda ambil adalah sebuah suara (vote) untuk tipe orang yang Anda inginkan. Tidak ada suara tunggal yang akan mengubah hidup Anda, tetapi seiring suara terkumpul, bukti identitas baru Anda tumbuh.",
+      "speaker": "James Clear",
+      "speakerTitle": "Pengarang",
+      "cgId": "cg-compounding-graph",
+      "bgmId": "bgm-focus-ambient",
+      "highlightedTerms": ["Habit Loop"]
+    }
+  }
+}

@@ -106,7 +106,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="dashboardContainerRef" class="max-w-container-max mx-auto px-4 sm:px-8 py-8 lg:py-10 space-y-10">
+  <div ref="dashboardContainerRef" class="max-w-container-max mx-auto px-4 sm:px-8 py-6 sm:py-8 lg:py-10 pb-24 lg:pb-10 space-y-8 sm:space-y-10">
     
     <!-- 2-Column Responsive Layout (Main 70% / Sidebar 30%) -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -122,22 +122,22 @@ onUnmounted(() => {
         <!-- 2. Section: Koleksi Buku Saya -->
         <section id="books-collection-section" class="space-y-6 scroll-mt-24" aria-label="Koleksi Buku Saya">
           <!-- Section Header with Title & Action Button -->
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-border-subtle/70">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-border-subtle/70 dark:border-transparent">
             <div>
               <div class="flex items-center gap-2.5">
                 <h2 class="font-display-lg text-2xl sm:text-3xl font-extrabold text-on-surface dark:text-[#F3EFE6]">
                   Koleksi Buku Saya
                 </h2>
                 <span class="text-xs font-sans font-bold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 dark:border-transparent">
-                  {{ filteredBooks.length }} Naskah
+                  {{ filteredBooks.length }} Buku
                 </span>
               </div>
               <p class="text-xs sm:text-sm text-text-secondary dark:text-[#C5BBAF] mt-1">
-                Koleksi naskah digital interaktif yang siap Anda baca kapan saja di peramban.
+                Koleksi buku digital interaktif yang siap Anda baca kapan saja di peramban.
               </p>
             </div>
 
-            <!-- Primary Action: [+ Tambah / Buka Buku] -->
+            <!-- Primary Action: [+ Tambah Buku Baru] -->
             <GButton
               variant="primary"
               size="md"
@@ -146,14 +146,14 @@ onUnmounted(() => {
               class="font-bold shadow-warm-sm shrink-0 self-start sm:self-auto"
               @click="isAddBookModalOpen = true"
             >
-              Tambah / Buka Buku
+              Tambah Buku Baru
             </GButton>
           </div>
 
           <!-- Active Search Filter Pill (If searching) -->
           <div
             v-if="libraryStore.searchQuery.trim()"
-            class="p-3 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-between gap-3 text-xs"
+            class="p-3 rounded-2xl bg-primary/10 border border-primary/30 dark:border-transparent flex items-center justify-between gap-3 text-xs"
           >
             <div class="flex items-center gap-2 text-on-surface dark:text-[#F3EFE6]">
               <span class="material-symbols-outlined text-primary text-base">search</span>
@@ -169,7 +169,7 @@ onUnmounted(() => {
             </button>
           </div>
 
-          <!-- Category Filter Chips -->
+          <!-- Category Filter Chips (Horizontal scrollable with smooth scrollbar) -->
           <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
             <GChip
               :active="activeFilter === 'All'"
@@ -203,7 +203,7 @@ onUnmounted(() => {
             </GChip>
           </div>
 
-          <!-- Book Grid (2 Columns on Desktop) -->
+          <!-- Book Grid (1 col on mobile, 2 cols on md+) -->
           <div
             v-if="filteredBooks.length > 0"
             ref="booksGridRef"
@@ -219,17 +219,17 @@ onUnmounted(() => {
           <!-- Empty State -->
           <div
             v-else
-            class="p-10 rounded-3xl bg-surface-secondary border border-border-subtle text-center space-y-4 shadow-warm-sm"
+            class="p-10 rounded-3xl bg-surface-secondary dark:bg-[#221E1A] border border-border-subtle dark:border-transparent text-center space-y-4 shadow-warm-sm"
           >
             <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto">
               <span class="material-symbols-outlined text-3xl">menu_book</span>
             </div>
             <div>
               <h3 class="font-display-lg text-lg font-bold text-on-surface dark:text-[#F3EFE6]">
-                Tidak ada naskah dalam kategori ini
+                Tidak ada buku dalam kategori ini
               </h3>
               <p class="text-xs sm:text-sm text-text-secondary dark:text-[#C5BBAF] mt-1 max-w-md mx-auto">
-                Silakan pilih kategori lain atau tambahkan naskah baru menggunakan file EPUB atau pencarian ISBN.
+                Silakan pilih kategori lain atau cari buku di database server Genmoire.
               </p>
             </div>
             <GButton
@@ -258,7 +258,7 @@ onUnmounted(() => {
       </aside>
     </div>
 
-    <!-- ================= MODAL TAMBAH / BUKA BUKU ================= -->
+    <!-- ================= MODAL TAMBAH BUKU BARU ================= -->
     <AddBookModal v-model="isAddBookModalOpen" />
 
     <!-- Overlays -->

@@ -34,7 +34,7 @@ const themeStore = useThemeStore();
           </div>
 
           <div class="border-t border-border-subtle/40 pt-3">
-            <p class="text-xs font-bold text-on-surface mb-2">Ukuran Huruf Naskah</p>
+            <p class="text-xs font-bold text-on-surface mb-2">Ukuran Huruf Teks Buku</p>
             <div class="grid grid-cols-3 gap-2">
               <button
                 v-for="size in (['small', 'medium', 'large'] as const)"

@@ -79,7 +79,7 @@ export const TIER_DEFINITIONS: TierDefinition[] = [
       {
         icon: 'auto_awesome',
         label: '75 Kredit AI Explain per-bulan',
-        description: 'Dukungan mendalam untuk naskah klasik dan istilah kompleks.',
+        description: 'Dukungan mendalam untuk buku klasik dan istilah kompleks.',
       },
       {
         icon: 'percent',
@@ -148,14 +148,15 @@ export const TIER_DEFINITIONS: TierDefinition[] = [
       {
         icon: 'stars',
         label: '15% Voucher Diskon Buku',
-        description: 'Voucher diskon istimewa 15% setiap 4 bulan secara berkala.',
+        description: 'Dukungan mendalam untuk buku klasik dan istilah kompleks.',
       },
     ],
     benefits: [
-      'Semua manfaat seluruh pangkat di bawahnya',
-      'Diskon spesial 15% periodik tiap 4 bulan',
-      'Mahkota kehormatan emas obsidian di samping nama pengguna',
-      'Akses awal ke naskah eksklusif dan beta fitur Genmoire',
+      'Gelar & Lencana eksklusif Loremaster',
+      'Kupon Diskon Buku 40% dari Penerbit Partner',
+      'Kredit AI Explain 100x per bulan',
+      'Akses Ruang Diskusi VIP & Teori Spoiler',
+      'Akses awal ke buku eksklusif dan beta fitur Genmoire',
     ],
   },
 ];
@@ -351,16 +352,25 @@ export const useProfileStore = defineStore('profile', () => {
     if (!unlockedTraits.value.includes(traitId)) {
       unlockedTraits.value.push(traitId);
       localStorage.setItem('gm-unlocked-traits', JSON.stringify(unlockedTraits.value));
-      const traitObj = allTraits.value.find(t => t.id === traitId);
-      if (traitObj) {
-        pendingTraitToast.value = traitObj;
-        setTimeout(() => {
-          if (pendingTraitToast.value?.id === traitId) {
-            pendingTraitToast.value = null;
-          }
-        }, 4500);
-      }
     }
+    const traitObj = allTraits.value.find(t => t.id === traitId);
+    if (traitObj) {
+      pendingTraitToast.value = traitObj;
+      setTimeout(() => {
+        if (pendingTraitToast.value?.id === traitId) {
+          pendingTraitToast.value = null;
+        }
+      }, 5000);
+    }
+  };
+
+  const triggerTierUpDemo = () => {
+    showTierUpOverlay.value = true;
+  };
+
+  const triggerAchievementDemo = (traitId?: string) => {
+    const targetId = traitId || allTraits.value[0]?.id || 'curious-mind';
+    unlockTrait(targetId);
   };
 
   const evaluateTraits = () => {
@@ -408,5 +418,7 @@ export const useProfileStore = defineStore('profile', () => {
     recordBookCompletion,
     unlockTrait,
     evaluateTraits,
+    triggerTierUpDemo,
+    triggerAchievementDemo,
   };
 });

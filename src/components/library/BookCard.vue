@@ -54,13 +54,22 @@ const onMouseLeave = () => {
         <span class="px-3 py-1 rounded-full text-xs font-sans font-bold uppercase bg-surface-elevated/90 backdrop-blur-md text-on-surface border border-border-subtle/50 dark:border-transparent shadow-sm">
           {{ book.genres[0] || 'NOVEL' }}
         </span>
-        <span
-          v-if="book.isCustomAuthorMode"
-          class="px-2.5 py-1 rounded-full text-xs font-sans font-bold bg-secondary-container/90 text-on-secondary-container border border-secondary/30 dark:border-transparent flex items-center gap-1 shadow-sm"
-          title="Author Official Artwork & Audio Enabled"
-        >
-          <span class="material-symbols-outlined text-[13px]">palette</span> Mode Penulis
-        </span>
+
+        <div class="flex items-center gap-1.5">
+          <span
+            v-if="!book.isUnlocked"
+            class="px-2.5 py-1 rounded-full text-xs font-sans font-bold bg-amber-500/20 backdrop-blur-md text-amber-900 dark:text-amber-300 border border-amber-500/40 shadow-sm flex items-center gap-1"
+          >
+            <span class="material-symbols-outlined text-[13px]">lock</span> Terkunci
+          </span>
+          <span
+            v-else-if="book.isCustomAuthorMode"
+            class="px-2.5 py-1 rounded-full text-xs font-sans font-bold bg-secondary-container/90 text-on-secondary-container border border-secondary/30 dark:border-transparent flex items-center gap-1 shadow-sm"
+            title="Author Official Artwork & Audio Enabled"
+          >
+            <span class="material-symbols-outlined text-[13px]">palette</span> Mode Penulis
+          </span>
+        </div>
       </div>
     </div>
 
@@ -79,12 +88,13 @@ const onMouseLeave = () => {
       <div class="mt-5 pt-4 border-t border-border-subtle/40">
         <div class="flex justify-between items-center text-xs font-sans text-text-secondary mb-2 font-semibold">
           <span>{{ book.estimatedReadMinutes }} mnt membaca</span>
-          <span>{{ book.progressPercent }}%</span>
+          <span>{{ book.isUnlocked ? `${book.progressPercent}%` : 'Terkunci' }}</span>
         </div>
-        <GProgressBar :value="book.progressPercent" variant="gold" height="sm" class="mb-4" />
+        <GProgressBar :value="book.isUnlocked ? book.progressPercent : 0" variant="gold" height="sm" class="mb-4" />
 
         <div class="flex items-center gap-2.5">
-          <RouterLink :to="`/read/${book.id}`" class="flex-1">
+          <!-- Unlocked: Start Reading -->
+          <RouterLink v-if="book.isUnlocked" :to="`/read/${book.id}`" class="flex-1">
             <GButton
               variant="primary"
               size="md"
@@ -92,6 +102,18 @@ const onMouseLeave = () => {
               customClass="w-full justify-center"
             >
               {{ book.progressPercent > 0 ? 'Lanjutkan Membaca' : 'Mulai Membaca' }}
+            </GButton>
+          </RouterLink>
+
+          <!-- Locked: Open Challenge / Book Detail -->
+          <RouterLink v-else :to="`/book/${book.id}`" class="flex-1">
+            <GButton
+              variant="secondary"
+              size="md"
+              icon="lock_open"
+              customClass="w-full justify-center font-bold"
+            >
+              Buka Akses Buku
             </GButton>
           </RouterLink>
 

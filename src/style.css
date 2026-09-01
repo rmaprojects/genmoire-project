@@ -68,7 +68,7 @@
     --color-text-primary: #D8D0C3;
     --color-text-secondary: #9E9385;
     --color-text-muted: #786D62;
-    --color-border-subtle: rgba(255, 255, 255, 0.04); /* Tonal blended border, no harsh white outlines */
+    --color-border-subtle: transparent; /* No harsh borders in dark mode, pure elevation & soft shadow */
   }
 
   html {
@@ -88,6 +88,11 @@
     border-color: var(--color-border-subtle);
   }
 
+  .dark input, .dark textarea, .dark select {
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) inset;
+  }
+
   input::placeholder, textarea::placeholder {
     color: var(--color-text-muted);
   }
@@ -105,6 +110,10 @@
   ::-webkit-scrollbar-thumb {
     background: var(--color-border-subtle);
     border-radius: 9999px;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #3A332C;
   }
 
   ::-webkit-scrollbar-thumb:hover {

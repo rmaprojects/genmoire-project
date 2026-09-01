@@ -299,7 +299,7 @@ onUnmounted(() => {
           <div>
             <h3 class="font-display-lg text-xl sm:text-2xl font-bold text-on-surface tracking-tight mb-2">Pilihan Teks Murni</h3>
             <p class="font-ui-body text-sm sm:text-base text-text-secondary leading-relaxed sm:leading-[1.6] max-w-[48ch]">
-              Bagi Anda yang menyukai ketenangan membaca naskah polos seperti buku konvensional, Anda dapat mematikan gambar dan musik kapan saja.
+              Bagi Anda yang menyukai ketenangan membaca buku polos seperti buku konvensional, Anda dapat mematikan gambar dan musik kapan saja.
             </p>
           </div>
           <div class="pt-4 border-t border-border-subtle/40 flex items-center justify-between text-xs sm:text-sm font-sans font-bold tracking-wide uppercase text-primary">

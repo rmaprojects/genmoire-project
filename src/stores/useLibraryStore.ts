@@ -4,15 +4,30 @@ import type { BookSummary, BookManifest } from '@/types/manifest';
 import booksData from '@/data/books.json';
 import aethelgardManifest from '@/data/manifests/chronicles-of-aethelgard.json';
 import alchemistManifest from '@/data/manifests/the-alchemist.json';
+import atomicHabitsManifest from '@/data/manifests/atomic-habits.json';
+import fatePreludeManifest from '@/data/manifests/fate-stay-night-prelude.json';
 
 const MANIFEST_REGISTRY: Record<string, BookManifest> = {
   'chronicles-of-aethelgard': aethelgardManifest as unknown as BookManifest,
   'the-alchemist': alchemistManifest as unknown as BookManifest,
+  'atomic-habits': atomicHabitsManifest as unknown as BookManifest,
+  'fate-stay-night-prelude': fatePreludeManifest as unknown as BookManifest,
+};
+
+const SMART_CODES: Record<string, string> = {
+  '#VN-AETHEL-01': 'chronicles-of-aethelgard',
+  '#VN-ALCHEM-02': 'the-alchemist',
+  '#VN-ATOMIC-03': 'atomic-habits',
+  '#VN-FATE-04': 'fate-stay-night-prelude',
 };
 
 export const useLibraryStore = defineStore('library', () => {
   const books = ref<BookSummary[]>(
     JSON.parse(localStorage.getItem('gm-library-books') || JSON.stringify(booksData))
+  );
+
+  const customManifests = ref<Record<string, BookManifest>>(
+    JSON.parse(localStorage.getItem('gm-custom-manifests') || '{}')
   );
 
   const activeFilter = ref<string>('All');
@@ -43,6 +58,10 @@ export const useLibraryStore = defineStore('library', () => {
     localStorage.setItem('gm-library-books', JSON.stringify(books.value));
   };
 
+  const saveCustomManifests = () => {
+    localStorage.setItem('gm-custom-manifests', JSON.stringify(customManifests.value));
+  };
+
   const getBookById = (id: string) => {
     return books.value.find(b => b.id === id);
   };
@@ -52,8 +71,135 @@ export const useLibraryStore = defineStore('library', () => {
     return books.value.find(b => b.isbn.replace(/[-\s]/g, '').toLowerCase() === cleanIsbn) || null;
   };
 
+  const findBookByCodeOrIsbn = (query: string): { book: BookSummary | null; source: 'isbn' | 'smart_code' | 'title' | 'none' } => {
+    const cleanQuery = query.trim();
+    if (!cleanQuery) return { book: null, source: 'none' };
+
+    // 1. Check Smart Grimoire Codes (#VN-...)
+    const upperQuery = cleanQuery.toUpperCase();
+    if (SMART_CODES[upperQuery]) {
+      const bookId = SMART_CODES[upperQuery];
+      const matched = books.value.find(b => b.id === bookId);
+      if (matched) return { book: matched, source: 'smart_code' };
+    }
+
+    // 2. Check direct ISBN match
+    const byIsbn = findBookByIsbn(cleanQuery);
+    if (byIsbn) return { book: byIsbn, source: 'isbn' };
+
+    // 3. Check by ID or title match
+    const lower = cleanQuery.toLowerCase();
+    const byIdOrTitle = books.value.find(b => b.id.toLowerCase() === lower || b.title.toLowerCase().includes(lower));
+    if (byIdOrTitle) return { book: byIdOrTitle, source: 'title' };
+
+    return { book: null, source: 'none' };
+  };
+
+  const generateCustomManifest = (book: BookSummary, customParagraphs?: string[]): BookManifest => {
+    const paragraphs = customParagraphs && customParagraphs.length > 0
+      ? customParagraphs
+      : [
+          `Selamat datang di buku digital interaktif "${book.title}". Ini adalah awal dari sebuah petualangan sastra baru yang dirancang khusus untuk pengalaman membaca kinetik.`,
+          book.synopsis || 'Kata demi kata terbentang di atas kanvas imajinasi, menyatu dalam harmoni visual dan narasi yang tenang.',
+          'Setiap paragraf adalah langkah menuju kedalaman makna, membuka gerbang pengetahuan bagi para cendekiawan pembaca sejati.',
+        ];
+
+    const nodeIds: string[] = [];
+    const nodes: BookManifest['nodes'] = {};
+
+    paragraphs.forEach((pText, idx) => {
+      const nodeId = `node-custom-${idx + 1}`;
+      nodeIds.push(nodeId);
+      nodes[nodeId] = {
+        id: nodeId,
+        text: pText,
+        speaker: idx === 0 ? book.author : undefined,
+        speakerTitle: idx === 0 ? 'Pengarang' : undefined,
+        cgId: 'cg-custom-ambient',
+        bgmId: 'bgm-custom-ambient',
+        highlightedTerms: idx === 0 ? [book.title.split(' ')[0] || 'Genmoire'] : [],
+      };
+    });
+
+    const manifest: BookManifest = {
+      manifestId: `manifest-${book.id}`,
+      bookId: book.id,
+      title: book.title,
+      author: book.author,
+      coverUrl: book.coverUrl,
+      synopsis: book.synopsis,
+      genre: book.genres,
+      tags: ['Koleksi Pribadi', 'BYOB', 'Kinetic Mode'],
+      isbn: book.isbn,
+      epubHash: 'custom-' + Date.now(),
+      estimatedReadTimeMinutes: book.estimatedReadMinutes,
+      totalChapters: 1,
+      authorControl: {
+        hasCustomAssets: false,
+        allowsAiVisuals: true,
+        supportsPureKineticMode: true,
+      },
+      pageChallenge: {
+        question: `Buka halaman 1 buku ${book.title}, apa kata pertama?`,
+        pageNumber: 1,
+        expectedWord: paragraphs[0]?.split(' ')[0]?.toLowerCase() || 'selamat',
+        hint: 'Kata pembuka buku.',
+      },
+      cgs: {
+        'cg-custom-ambient': {
+          id: 'cg-custom-ambient',
+          url: book.coverUrl,
+          alt: `Ilustrasi kanvas untuk ${book.title}`,
+          prompt: `Cinematic artistic atmospheric lighting for ${book.title}`,
+          isAiGenerated: true,
+        },
+      },
+      bgms: {
+        'bgm-custom-ambient': {
+          id: 'bgm-custom-ambient',
+          title: 'Ambient Library Sanctuary (Warm Piano)',
+          url: 'https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3',
+          loop: true,
+          volume: 0.5,
+        },
+      },
+      explains: {
+        [book.title.split(' ')[0] || 'Genmoire']: {
+          term: book.title.split(' ')[0] || 'Genmoire',
+          contextType: 'plot',
+          shortDefinition: `Istilah utama dalam semesta buku "${book.title}".`,
+          inContextExplanation: `Frasa ini menjadi simbol inti perjalanan karakter dan dinamika narasi dalam karya "${book.title}".`,
+          authorNote: 'Catatan terkurasi untuk buku pribadi.',
+        },
+      },
+      chapters: [
+        {
+          id: 'ch-1',
+          title: 'Bab I: Pembuka Kisah',
+          order: 1,
+          nodeIds,
+        },
+      ],
+      nodes,
+    };
+
+    customManifests.value[book.id] = manifest;
+    saveCustomManifests();
+    return manifest;
+  };
+
   const getManifestByBookId = (bookId: string): BookManifest | null => {
-    return MANIFEST_REGISTRY[bookId] || (aethelgardManifest as unknown as BookManifest);
+    if (MANIFEST_REGISTRY[bookId]) {
+      return MANIFEST_REGISTRY[bookId];
+    }
+    if (customManifests.value[bookId]) {
+      return customManifests.value[bookId];
+    }
+    const book = getBookById(bookId);
+    if (book) {
+      return generateCustomManifest(book);
+    }
+    return aethelgardManifest as unknown as BookManifest;
   };
 
   const getPageChallenge = (bookId: string) => {
@@ -61,7 +207,6 @@ export const useLibraryStore = defineStore('library', () => {
     if (manifest && manifest.pageChallenge) {
       return manifest.pageChallenge;
     }
-    // Fallbacks for other books
     if (bookId === 'atomic-habits') {
       return {
         question: 'Buka halaman 25 buku fisikmu, apa kata kedua di judul bab pertama?',
@@ -102,7 +247,7 @@ export const useLibraryStore = defineStore('library', () => {
     if (found) {
       return { success: true, book: found, message: `Buku "${found.title}" ditemukan di server!` };
     }
-    return { success: false, message: 'ISBN tidak ditemukan di pangkalan data naskah resmi.' };
+    return { success: false, message: 'ISBN tidak ditemukan di pangkalan data buku resmi.' };
   };
 
   const verifyPageChallenge = (bookId: string, answer: string): boolean => {
@@ -115,44 +260,44 @@ export const useLibraryStore = defineStore('library', () => {
     return isCorrect;
   };
 
-  const simulateByobVerification = (fileName: string): Promise<{ success: boolean; hash: string; matchedBook?: BookSummary }> => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        // Simulated deterministic hash based on filename
-        const hash = 'e2fc714c4727ee9395f324cd2e7f331f';
-        const matchedBook = books.value.find(b => b.id === 'chronicles-of-aethelgard') || books.value[0];
-        if (matchedBook) {
-          matchedBook.isUnlocked = true;
-          saveBooks();
-        }
-        resolve({
-          success: true,
-          hash,
-          matchedBook,
-        });
-      }, 350);
-    });
+  const verifyByEpubFile = (bookId: string, _fileName: string): boolean => {
+    unlockBook(bookId);
+    return true;
   };
 
-  const addCustomEpub = (fileName: string): BookSummary => {
-    const cleanTitle = fileName.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ');
+  const submitEpubForReview = (
+    fileName: string,
+    data: {
+      isbn?: string;
+      title?: string;
+      author?: string;
+      synopsis?: string;
+    }
+  ): BookSummary => {
+    const cleanTitle = data.title?.trim() || fileName.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ');
+    const formattedTitle = cleanTitle.charAt(0).toUpperCase() + cleanTitle.slice(1);
+    const bookId = `submitted-${Date.now()}`;
+
     const newBook: BookSummary = {
-      id: `byob-${Date.now()}`,
-      title: cleanTitle.charAt(0).toUpperCase() + cleanTitle.slice(1),
-      author: 'Pengunggah Lokal (BYOB)',
+      id: bookId,
+      title: formattedTitle,
+      author: data.author?.trim() || 'Penulis / Pengunggah',
       coverUrl: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80',
-      synopsis: `Naskah pribadi dimuat secara lokal dari file "${fileName}". Divalidasi dan dienkripsi di peramban Anda.`,
-      genres: ['BYOB', 'Naskah Lokal'],
-      isbn: 'BYOB-LOCAL-EPUB',
-      estimatedReadMinutes: 30,
-      isUnlocked: true,
+      synopsis: data.synopsis?.trim() || `Pengajuan adaptasi visual novel dari file "${fileName}". Sedang dalam proses kurasi oleh tim Genmoire (Estimasi persetujuan: 7x24 jam).`,
+      genres: ['Pengajuan Baru', 'Menunggu Approval'],
+      isbn: data.isbn?.trim() || `REQ-${Math.floor(100000 + Math.random() * 900000)}`,
+      estimatedReadMinutes: 25,
+      isUnlocked: false,
       isCustomAuthorMode: false,
       progressPercent: 0,
       currentChapterId: 'ch-1',
       lastReadDate: new Date().toISOString().split('T')[0],
     };
+
     books.value.unshift(newBook);
     saveBooks();
+
+    generateCustomManifest(newBook);
     return newBook;
   };
 
@@ -164,6 +309,12 @@ export const useLibraryStore = defineStore('library', () => {
     }
   };
 
+  const simulateByobVerification = async (fileName: string): Promise<{ hash: string; matchedBook?: BookSummary }> => {
+    const hash = 'md5-' + Math.random().toString(36).substring(2, 10);
+    const matchedBook = books.value[0];
+    return { hash, matchedBook };
+  };
+
   return {
     books,
     activeFilter,
@@ -171,13 +322,17 @@ export const useLibraryStore = defineStore('library', () => {
     recentlyReadBook,
     getBookById,
     findBookByIsbn,
+    findBookByCodeOrIsbn,
     getManifestByBookId,
     getPageChallenge,
+    generateCustomManifest,
     unlockBook,
     verifyIsbn,
     verifyPageChallenge,
+    verifyByEpubFile,
+    submitEpubForReview,
     simulateByobVerification,
-    addCustomEpub,
     toggleAuthorCustomMode,
   };
 });
+

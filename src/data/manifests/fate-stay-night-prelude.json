@@ -1,0 +1,138 @@
+{
+  "manifestId": "manifest-fate-prelude-v1",
+  "bookId": "fate-stay-night-prelude",
+  "title": "The Awakening of Fuyuki: Holy Grail Prelude",
+  "author": "Kinoko Nasu (Tribute Edition)",
+  "coverUrl": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80",
+  "synopsis": "Malam ketika langit Fuyuki terbelah oleh kilatan mantra Servant. Pengalaman membaca novel kinetik dengan visual atmospheric Fate-style dan scoring ambient magis.",
+  "genre": ["Urban Fantasy", "Action", "Visual Novel"],
+  "tags": ["Visual Novel", "Dark Fantasy", "Noble Phantasm", "Type-Moon"],
+  "isbn": "978-4-04-100234-5",
+  "epubHash": "f1a2t3e4s5t6a7y8n9i0g1h2t3p4r5e6",
+  "estimatedReadTimeMinutes": 20,
+  "totalChapters": 2,
+  "authorControl": {
+    "hasCustomAssets": true,
+    "allowsAiVisuals": true,
+    "supportsPureKineticMode": true
+  },
+  "pageChallenge": {
+    "question": "Buka halaman 12 buku fisikmu, apa sebutan artefak suci yang diperebutkan para Magus?",
+    "pageNumber": 12,
+    "lineNumber": 2,
+    "expectedWord": "grail",
+    "hint": "Cawan suci yang mengabulkan segala permohonan."
+  },
+  "cgs": {
+    "cg-fuyuki-night": {
+      "id": "cg-fuyuki-night",
+      "url": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1920&q=80",
+      "alt": "Pemandangan kota Fuyuki di tengah kabut malam dengan siluet menara",
+      "prompt": "Cinematic visual novel background of Japanese modern city at midnight, mystical moonlit fog, skyscraper lights",
+      "isAiGenerated": false
+    },
+    "cg-magic-circle": {
+      "id": "cg-magic-circle",
+      "url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
+      "alt": "Lingkaran sihir pemanggilan Servant bersinar merah menyala di lantai basement",
+      "prompt": "Glowing magical summoning circle inscribed on stone floor with red arcane runes radiating intense light",
+      "isAiGenerated": false
+    }
+  },
+  "bgms": {
+    "bgm-holy-grail-theme": {
+      "id": "bgm-holy-grail-theme",
+      "title": "Prelude to the Holy Grail (Dramatic Orchestral)",
+      "url": "https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3",
+      "loop": true,
+      "volume": 0.5
+    }
+  },
+  "explains": {
+    "Holy Grail War": {
+      "term": "Holy Grail War",
+      "contextType": "plot",
+      "shortDefinition": "Ritual pertempuran rahasia antara 7 Master (Magus) dan 7 Servant (Roh Pahlawan Legendaris) demi memperebutkan Cawan Suci.",
+      "inContextExplanation": "Diadakan setiap 60 tahun sekali di kota Fuyuki. Pemenang tunggal yang bertahan berhak menggunakan Cawan Suci untuk mengabulkan keinginan apa pun.",
+      "authorNote": "Pondasi semesta Type-Moon."
+    },
+    "Command Spells": {
+      "term": "Command Spells",
+      "contextType": "syntax",
+      "shortDefinition": "Tiga tato stigmata suci di punggung tangan Master yang mampu memaksakan kepatuhan mutlak pada Servant.",
+      "inContextExplanation": "Setiap mantra dapat digunakan untuk memberikan perintah absolut atau memperkuat kekuatan Servant seketika, namun hanya berjumlah 3 buah.",
+      "authorNote": "Sumber daya taktis vital bagi seorang Magus."
+    },
+    "Noble Phantasm": {
+      "term": "Noble Phantasm",
+      "contextType": "vocabulary",
+      "shortDefinition": "Senjata pamungkas atau perwujudan kristalisasi legenda legendaris seorang Roh Pahlawan.",
+      "inContextExplanation": "Ketika nama sejatinya dilafalkan, Noble Phantasm melepaskan daya hancur luar biasa yang mencerminkan pencapaian tertinggi pemiliknya di masa lampau.",
+      "authorNote": "Kartu truf penentu jalannya pertarungan antar Servant."
+    }
+  },
+  "chapters": [
+    {
+      "id": "ch-1",
+      "title": "Bab I: Heningnya Kota Fuyuki di Tengah Malam",
+      "order": 1,
+      "nodeIds": ["node-f1", "node-f2", "node-f3"]
+    },
+    {
+      "id": "ch-2",
+      "title": "Bab II: Sumpah Pemanggilan Roh Pahlawan",
+      "order": 2,
+      "nodeIds": ["node-f4", "node-f5", "node-f6"]
+    }
+  ],
+  "nodes": {
+    "node-f1": {
+      "id": "node-f1",
+      "text": "Malam itu, angin dingin dari laut berhembus melintasi jembatan Fuyuki. Udara terasa berat oleh tekanan mana yang tidak kasat mata.",
+      "cgId": "cg-fuyuki-night",
+      "bgmId": "bgm-holy-grail-theme",
+      "highlightedTerms": ["Holy Grail War"]
+    },
+    "node-f2": {
+      "id": "node-f2",
+      "text": "Tiga tanda stigmata merah di punggung tangan kananku mulai berdenyut perih. Waktunya telah tiba.",
+      "speaker": "Sang Magus",
+      "speakerTitle": "Master Terpilih",
+      "cgId": "cg-fuyuki-night",
+      "bgmId": "bgm-holy-grail-theme",
+      "highlightedTerms": ["Command Spells"]
+    },
+    "node-f3": {
+      "id": "node-f3",
+      "text": "Tujuh Master. Tujuh Servant. Hanya satu jiwa yang akan bertahan hidup untuk menyentuh keajaiban Cawan Suci.",
+      "cgId": "cg-fuyuki-night",
+      "bgmId": "bgm-holy-grail-theme",
+      "highlightedTerms": ["Holy Grail War"]
+    },
+    "node-f4": {
+      "id": "node-f4",
+      "text": "Perak dan besi sebagai pondasi. Batu dan perjanjian sebagai fondasi. Aku bersumpah menyerahkan jiwaku pada takdir yang berputar.",
+      "speaker": "Sang Magus",
+      "speakerTitle": "Pengucap Mantra",
+      "cgId": "cg-magic-circle",
+      "bgmId": "bgm-holy-grail-theme",
+      "highlightedTerms": ["Command Spells"]
+    },
+    "node-f5": {
+      "id": "node-f5",
+      "text": "Kilatan petir perak menyambar dari pusat lingkaran sihir. Dari balik tirai asap dan debu yang membara, sesosok bayangan agung berdiri dengan pedang terhunus.",
+      "cgId": "cg-magic-circle",
+      "bgmId": "bgm-holy-grail-theme",
+      "highlightedTerms": ["Noble Phantasm"]
+    },
+    "node-f6": {
+      "id": "node-f6",
+      "text": "\"Aku bertanya padamu—apakah engkau Master yang telah memanggilku?\"",
+      "speaker": "Saber",
+      "speakerTitle": "Servant Pedang",
+      "cgId": "cg-magic-circle",
+      "bgmId": "bgm-holy-grail-theme",
+      "highlightedTerms": ["Noble Phantasm", "Holy Grail War"]
+    }
+  }
+}
